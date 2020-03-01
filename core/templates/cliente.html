@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Clientes</title>
+        <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    </head>
+    <body>
+        <center>
+            <h1>Bem vindo a loja virtual</h1>
+            <h3 class="titulo">Clientes cadastrados</h3>
+            <table>
+                {% for clientes in cliente %}
+                <tr>
+                    <th><a href="{% url 'index' %}">{{ clientes.nome }}</a></th>
+                    <th>{{ clientes.cpf }}</th>
+                    <th>{{ clientes.profissao }}</th>
+                </tr>
+                {% endfor %}
+            </table>
+    </body>
+</html>
